@@ -1,0 +1,4 @@
+[
+  { "account_id": "PAVAN001", "name": "Pavan Kumar", "balance": 75000.50, "currency": "INR", "status": "Active" },
+  { "account_id": "DEMO999", "name": "Guest User", "balance": 1200.00, "currency": "INR", "status": "Inactive" }
+]
