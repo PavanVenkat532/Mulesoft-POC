@@ -1,11 +1,12 @@
-# Stage 1: Build (The "Kitchen")
-FROM maven:3.8-openjdk-11 AS build
-COPY . /usr/src/app
+# Stage 1: Build (USE THIS IMAGE)
+FROM maven:3.8.6-openjdk-11 AS build
 WORKDIR /usr/src/app
-# This runs your Maven build inside OpenShift
-RUN mvn clean package -DskipTests || exit 1 
-
-# Use a specific wildcard to avoid picking up the wrong, smaller JAR
+COPY . .
+# Now this command will work!
+RUN mvn clean package -DskipTests || exit 1
+# Stage 2: Run (KEEP THIS AS IS)
+FROM default-route-openshift-image-registry.apps.rm2.thpm.p1.openshiftapps.com/openshift/java-runtime:openjdk-11-ubi8
+WORKDIR /deployments
 COPY --from=build /usr/src/app/target/*-mule-application.jar /deployments/app.jar
-# Add this line to verify the file exists and has size during the BUILD logs
-RUN ls -lh /deployments/app.jar
+EXPOSE 8081
+CMD ["java", "-jar", "/deployments/app.jar"]
