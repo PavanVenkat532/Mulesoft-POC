@@ -35,8 +35,12 @@
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
 				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<!-- <version>${mule.maven.plugin.version}</version> --> 
+				<version>4.6.1</version>
 				<extensions>true</extensions>
+				<configuration>
+					<appRuntimeVersion>4.8.9</appRuntimeVersion>
+				</configuration>
 			</plugin>
 			<plugin>
 				<groupId>com.mulesoft.munit.tools</groupId>
