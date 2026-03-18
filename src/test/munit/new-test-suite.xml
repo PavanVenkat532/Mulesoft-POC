@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="new-test-suite.xml" />
+	<munit:test name="firstCloudhubproject-Munit-msFlowTest" doc:id="298d317f-be0a-404a-8579-939bf9828460" description="Test">
+		<munit:execution >
+			<set-payload value='#[{ "a": "40" , "b": "60"}]' doc:name="Set Payload" doc:id="9df78fd5-578b-44fb-a17b-26a51d28f03d" />
+			<flow-ref doc:name="Flow-ref to firstcloudhubproject-msFlow" doc:id="3d05f40c-5a5a-4903-a95b-687d32bb4126" name="firstcloudhubproject-msFlow"/>
+		</munit:execution>
+		<munit:validation >
+			<logger level="INFO" doc:name="Logger" doc:id="9b82e62d-7675-4319-aede-35eb29ae94bf" message='#[payload]'/>
+			<munit-tools:assert-equals doc:name="Assert equals" doc:id="451aa85a-986f-49f5-89dc-871c65003562" actual="#[payload]" expected="#[payload]"/>
+			<logger level="INFO" doc:name="Logger" doc:id="9fe0456a-f2f4-4bdf-b00f-665c39cbc2d7" message='#[payload]'/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>
