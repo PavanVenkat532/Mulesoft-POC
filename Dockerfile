@@ -5,8 +5,8 @@ WORKDIR /usr/src/app
 # This runs your Maven build inside OpenShift
 RUN mvn clean package -DskipTests
 
-# Stage 2: Run (The "Plate")
+# Stage 2: Run
 FROM default-route-openshift-image-registry.apps.rm2.thpm.p1.openshiftapps.com/openshift/java-runtime:openjdk-11-ubi8
-# We copy from the 'build' stage and rename to app.jar for simplicity
-COPY --from=build /usr/src/app/target/*.jar /deployments/app.jar
+# CHANGE THIS LINE to be more specific (use -mule-application.jar)
+COPY --from=build /usr/src/app/target/*-mule-application.jar /deployments/app.jar
 CMD ["java", "-jar", "/deployments/app.jar"]
