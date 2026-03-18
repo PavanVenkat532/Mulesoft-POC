@@ -20,7 +20,9 @@
 		<tags/>
 		<categories>[]</categories>
 		<fields>[]</fields>
-		<munit.version>3.6.2</munit.version>
+		<munit.version>3.0.0</munit.version>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
 	</properties>
 
 	<build>
