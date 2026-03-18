@@ -4,7 +4,7 @@ COPY . /usr/src/app
 WORKDIR /usr/src/app
 # This runs your Maven build inside OpenShift
 RUN mvn clean package -DskipTests
-
+# sample text
 # Stage 2: Run (The "Plate")
 # Using the specific Java 11 runtime we found in your cluster
 FROM default-route-openshift-image-registry.apps.rm2.thpm.p1.openshiftapps.com/openshift/java-runtime:openjdk-11-ubi8
