@@ -39,6 +39,7 @@
 				<version>4.6.1</version>
 				<extensions>true</extensions>
 				<configuration>
+					<classifier>mule-application</classifier>
 					<appRuntimeVersion>4.8.9</appRuntimeVersion>
 				</configuration>
 			</plugin>
