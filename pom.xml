@@ -43,7 +43,7 @@
 					<lightweightPackage>false</lightweightPackage>
 					<attachMuleSources>true</attachMuleSources>
 					<includeSearchableRepositories>true</includeSearchableRepositories>
-					<appRuntimeVersion>4.8.9</appRuntimeVersion>
+					<!-- <appRuntimeVersion>4.8.9</appRuntimeVersion> --> 
 				</configuration>
 			</plugin>
 			<plugin>

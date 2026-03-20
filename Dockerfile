@@ -3,11 +3,10 @@ FROM maven:3.8.6-openjdk-11 AS build
 WORKDIR /usr/src/app
 COPY . .
 # Now this command will work!
-RUN mvn clean package -DskipTests || exit 1
+RUN mvn clean package -DskipTests -U -Dmule.maven.plugin.version=3.8.2
 
 # Stage 2: Run
 FROM default-route-openshift-image-registry.apps.rm2.thpm.p1.openshiftapps.com/openshift/java-runtime:openjdk-11-ubi8
-
 WORKDIR /deployments
 
 # DO NOT USE *.jar. Use the specific '-mule-application.jar' suffix
