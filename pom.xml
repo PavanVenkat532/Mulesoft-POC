@@ -44,6 +44,16 @@
 					<attachMuleSources>true</attachMuleSources>
 					<includeSearchableRepositories>true</includeSearchableRepositories>
 					<!-- <appRuntimeVersion>4.8.9</appRuntimeVersion> --> 
+					<sharedLibraries>
+						<sharedLibrary>
+							<groupId>org.mule.connectors</groupId>
+							<artifactId>mule-http-connector</artifactId>
+						</sharedLibrary>
+						<sharedLibrary>
+							<groupId>org.mule.connectors</groupId>
+							<artifactId>mule-sockets-connector</artifactId>
+						</sharedLibrary>
+					</sharedLibraries>
 				</configuration>
 			</plugin>
 			<plugin>
