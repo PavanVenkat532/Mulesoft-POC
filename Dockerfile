@@ -10,7 +10,7 @@ FROM default-route-openshift-image-registry.apps.rm2.thpm.p1.openshiftapps.com/o
 WORKDIR /deployments
 
 # DO NOT USE *.jar. Use the specific '-mule-application.jar' suffix
-COPY --from=build /usr/src/app/target/firstcloudhubproject-1.0.3-mule-application.jar /deployments/app.jar
+COPY --from=build /usr/src/app/target/*-mule-application.jar /deployments/app.jar
 
 # Add this line to verify the file size DURING the build logs
 RUN ls -lh /deployments/app.jar
