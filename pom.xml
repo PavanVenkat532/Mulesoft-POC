@@ -40,6 +40,8 @@
 				<extensions>true</extensions>
 				<configuration>
 					<classifier>mule-application</classifier>
+					<lightweightPackage>false</lightweightPackage>
+					<attachMuleSources>true</attachMuleSources>
 					<appRuntimeVersion>4.8.9</appRuntimeVersion>
 				</configuration>
 			</plugin>
